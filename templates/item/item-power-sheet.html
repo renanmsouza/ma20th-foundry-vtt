@@ -1,0 +1,93 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" alt="Item Image" />
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{item.name}}"
+                    placeholder="{{localize 'MA20th.Name'}}" /></h1>
+        </div>
+    </header>
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="description">{{localize "MA20th.Description"}}</a>
+        <a class="item" data-tab="attributes">{{localize "MA20th.Attributes"}}</a>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+
+        {{!-- Description Tab --}}
+        <div class="tab" data-group="primary" data-tab="description">
+            <!-- it's a bit clunky trying to break things up. Easier to implement expanding powers with just one description too-->
+            <!-- <label class="resource-label">{{localize "MA20th.Cost"}}: </label>
+            <div class="half-height">
+            {{editor content=data.cost target="data.cost" button=true owner=owner editable=editable}}
+            </div>
+            <label class="resource-label">{{localize "MA20th.Duration"}}: </label>
+            <div class="half-height">
+            {{editor content=data.duration target="data.duration" button=true owner=owner editable=editable}}
+            </div> -->
+            <!-- <label class="resource-label">{{localize "MA20th.System"}}: </label> -->
+            {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+        </div>
+
+        {{!-- Attributes Tab --}}
+        <div class="tab attributes" data-group="primary" data-tab="attributes">
+            {{!-- As you add new fields, add them in here! --}}
+            <div class="resource grid grid-4col flex-center">
+                <label class="resource-label">{{localize "MA20th.Discipline"}}: </label>
+                <select name="data.discipline" data-type="String">
+                    {{#select data.discipline}}
+                    <option value="animalism">{{localize "MA20th.Animalism"}}</option>
+                    <option value="auspex">{{localize "MA20th.Auspex"}}</option>
+                    <option value="celerity">{{localize "MA20th.Celerity"}}</option>
+                    <option value="dominate">{{localize "MA20th.Dominate"}}</option>
+                    <option value="fortitude">{{localize "MA20th.Fortitude"}}</option>
+                    <option value="obfuscate">{{localize "MA20th.Obfuscate"}}</option>
+                    <option value="potence">{{localize "MA20th.Potence"}}</option>
+                    <option value="presence">{{localize "MA20th.Presence"}}</option>
+                    <option value="protean">{{localize "MA20th.Protean"}}</option>
+                    <option value="sorcery">{{localize "MA20th.BloodSorcery"}}</option>
+                    <option value="oblivion">{{localize "MA20th.Oblivion"}}</option>
+                    <option value="alchemy">{{localize "MA20th.ThinBloodAlchemy"}}</option>
+                    <option value="rituals">{{localize "MA20th.Rituals"}}</option>
+                    <option value="ceremonies">{{localize "MA20th.Ceremonies"}}</option>
+                    {{/select}}
+                </select>
+                <label class="resource-label">{{localize "MA20th.Rollable"}}: </label>
+                <input type="checkbox" id="data.rollable" name="data.rollable" {{checked data.rollable}}>
+
+                <label class="resource-label">{{localize "MA20th.System"}}: </label>
+                <select name="data.dice1" data-type="String">
+                    {{#select data.dice1}}
+                    <option value="strength">{{localize "MA20th.Strength"}}</option>
+                    <option value="dexterity">{{localize "MA20th.Dexterity"}}</option>
+                    <option value="stamina">{{localize "MA20th.Stamina"}}</option>
+                    <option value="charisma">{{localize "MA20th.Charisma"}}</option>
+                    <option value="manipulation">{{localize "MA20th.Manipulation"}}</option>
+                    <option value="composure">{{localize "MA20th.Composure"}}</option>
+                    <option value="intelligence">{{localize "MA20th.Intelligence"}}</option>
+                    <option value="wits">{{localize "MA20th.Wits"}}</option>
+                    <option value="resolve">{{localize "MA20th.Resolve"}}</option>
+                    <option value="discipline">{{localize (getDisciplineName item.data.discipline)}}</option>
+                    {{/select}}
+                </select>
+                <label class="resource-label">+</label>
+                <select name="data.dice2" data-type="String">
+                    {{#select data.dice2}}
+                    <option value="strength">{{localize "MA20th.Strength"}}</option>
+                    <option value="dexterity">{{localize "MA20th.Dexterity"}}</option>
+                    <option value="stamina">{{localize "MA20th.Stamina"}}</option>
+                    <option value="charisma">{{localize "MA20th.Charisma"}}</option>
+                    <option value="manipulation">{{localize "MA20th.Manipulation"}}</option>
+                    <option value="composure">{{localize "MA20th.Composure"}}</option>
+                    <option value="intelligence">{{localize "MA20th.Intelligence"}}</option>
+                    <option value="wits">{{localize "MA20th.Wits"}}</option>
+                    <option value="resolve">{{localize "MA20th.Resolve"}}</option>
+                    <option value="discipline">{{localize (getDisciplineName item.data.discipline)}}</option>
+                    {{/select}}
+                </select>
+            </div>
+        </div>
+    </section>
+</form>

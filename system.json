@@ -1,0 +1,34 @@
+{
+  "name": "ma20th",
+  "title": "Mago Ascenção edição 20 Anos",
+  "description": "Mago Ascenção Edição 20 Anos",
+  "version": "1.0.0",
+  "minimumCoreVersion": "0.7.0",
+  "compatibleCoreVersion": "0.7.9",
+  "templateVersion": 2,
+  "author": "Renan M. Souza",
+  "esmodules": ["module/main.js"],
+  "styles": ["css/ma20th.css"],
+  "scripts": [],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Brazilian Portuguese",
+      "path": "lang/pt-BR.json"
+    }
+  ],
+  "gridDistance": 5,
+  "gridUnits": "m",
+  "primaryTokenAttribute": "",
+  "secondaryTokenAttribute": "",
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": "LICENSE.txt"
+}
