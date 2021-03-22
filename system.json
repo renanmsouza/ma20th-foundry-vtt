@@ -27,8 +27,8 @@
   "gridUnits": "m",
   "primaryTokenAttribute": "",
   "secondaryTokenAttribute": "",
-  "url": "",
-  "manifest": "",
+  "url": "https://github.com/renanmsouza/ma20th-foundry-vtt",
+  "manifest": "https://raw.githubusercontent.com/renanmsouza/ma20th-foundry-vtt/master/system.json",
   "download": "",
   "license": "LICENSE.txt"
 }
