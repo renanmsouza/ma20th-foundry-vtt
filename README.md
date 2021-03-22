@@ -5,7 +5,7 @@
 
 This system is for playing Mage Ascension features of 20th Anniversary System for Foundry VTT.
 
-All this system was edited and remodelated from Vampire the Masquerade 5e System [vtm5e] created and susteined by Rayji96 [Rayji96],
+All this system was edited and remodelated from Vampire the Masquerade 5e System (link: [vtm5e]) created and susteined by [Rayji96],
 still have a lot working to do...
 
 All the credits to original team of creators is below.
