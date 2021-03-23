@@ -915,10 +915,10 @@
         data[states[oldState]] = Number(data[states[oldState]]) - 1
       }
   
-      // If the step was removed we also need to subtract from the maximum.
-      if (oldState !== '' && newState === '') {
-        data[states['-']] = Number(data[states['-']]) - 1
-      }
+      // // If the step was removed we also need to subtract from the maximum.
+      // if (oldState !== '' && newState === '') {
+      //   data[states['-']] = Number(data[states['-']]) - 1
+      // }
   
       if (newState !== '') {
         data[states[newState]] = Number(data[states[newState]]) + Math.max(index + 1 - fulls - halfs, 1)
@@ -1032,6 +1032,8 @@
       html.find('.resource-counter-2cf').each(function () {
         const data = this.dataset
         const states = parseCounterStates(data.states)
+
+        console.log(data);
   
         const fulls = Number(data[states['-']]) || 0
         const halfs = Number(data[states['/']]) || 0
