@@ -94,6 +94,10 @@ Hooks.once('init', async function () {
     return ret
   })
 
+  Handlebars.registerHelper('willpowerRollValue', function (willpower) {
+    return (willpower.max - willpower.spent)
+  })
+
   Handlebars.registerHelper('getDisciplineName', function (key, roll = false) {
     const disciplines = {
       animalism: 'MA20th.Animalism',

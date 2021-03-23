@@ -1,4 +1,4 @@
-# Mage Ascension 20th Anniversary System for Foundry VTT
+# Mage: The Ascension 20th Anniversary Edition System for Foundry VTT
 
 [![Foundry Shield 0.7.9]][Foundry URL]
 [![MIT License]][MIT URL]
@@ -19,7 +19,6 @@ You can reach me out at RenanSouza#1493 on Discord with issues, feature requests
 ## Credits
 
 * This sheet was initially based on the [boilerplate system] by @asacolips#1867
-* French localization started by @Lloyxide#6914
 * Brazilian Portuguese localization started by [danielmalka]
 * Icons used with permissions from [cftarbay]
 * CSS improvements by [lipefl]

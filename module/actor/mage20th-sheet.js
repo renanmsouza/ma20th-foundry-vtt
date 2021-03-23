@@ -201,6 +201,7 @@
   
       this._setupDotCounters(html)
       this._setupSquareCounters(html)
+      this._setupSquareCountersSyb(html)
   
       // Everything below here is only needed if the sheet is editable
       if (!this.options.editable) return
@@ -249,6 +250,10 @@
       html.find('.resource-value > .resource-value-step').click(this._onDotCounterChange.bind(this))
       html.find('.resource-value > .resource-value-empty').click(this._onDotCounterEmpty.bind(this))
       html.find('.resource-counter > .resource-counter-step').click(this._onSquareCounterChange.bind(this))
+      html.find('.resource-counter > .resource-counter2-step').click(this._onSquareCounterChange.bind(this))
+      html.find('.resource-counter > .resource-counter3-step').click(this._onSquareCounterChange.bind(this))
+
+      html.find('.resource-counter-syb > .resource-counter-syb-step').click(this._onSquareSybCounterChange.bind(this))
   
       // Drag events for macros.
       // if (this.actor.owner) {
@@ -563,8 +568,6 @@
       const element = event.currentTarget
       // Get Skills properties: { label: name, roll: values }
       const skillProperties = element.dataset
-
-      console.log(skillProperties)
       
       let options = '';
       for (const [key, value] of Object.entries(this.actor.data.data.abilities)) {
@@ -616,7 +619,7 @@
       }
   
       new Dialog({
-        title: game.i18n.localize('MA20th.Rolling') + ` ${skillProperties.label}...`,
+        title: `${game.i18n.localize('MA20th.Rolling')}   ${game.i18n.localize(skillProperties.label)}...`,
         content: template,
         buttons: buttons,
         default: 'draw'
@@ -670,7 +673,7 @@
       }
   
       new Dialog({
-        title: game.i18n.localize('MA20th.Rolling') + ` ${abilityProperties.label}...`,
+        title: `${game.i18n.localize('MA20th.Rolling')}   ${game.i18n.localize(abilityProperties.label)}...`,
         content: template,
         buttons: buttons,
         default: 'draw'
@@ -785,11 +788,19 @@
       const data = parent[0].dataset
       const states = parseCounterStates(data.states)
       const fields = data.name.split('.')
-      const steps = parent.find('.resource-counter-step')
+      var steps = parent.find('.resource-counter-step')
       const humanity = data.name === 'data.humanity'
       const fulls = Number(data[states['-']]) || 0
       const halfs = Number(data[states['/']]) || 0
       const crossed = Number(data[states.x]) || 0
+
+      if (steps.length === 0) {
+        steps = parent.find('.resource-counter2-step')
+      }
+
+      if (steps.length === 0) {
+        steps = parent.find('.resource-counter3-step')
+      }
   
       if (index < 0 || index > steps.length) {
         return
@@ -815,6 +826,53 @@
   
       if (newState !== '') {
         data[states[newState]] = Number(data[states[newState]]) + Math.max(index + 1 - fulls - halfs - crossed, 1)
+      }
+  
+      const newValue = Object.values(states).reduce(function (obj, k) {
+        obj[k] = Number(data[k]) || 0
+        return obj
+      }, {})
+  
+      this._assignToActorField(fields, newValue)
+    }
+
+    _onSquareSybCounterChange (event) {
+      event.preventDefault()
+      const element = event.currentTarget
+      const index = Number(element.dataset.index)
+      const oldState = element.dataset.state || ''
+      const parent = $(element.parentNode)
+      const data = parent[0].dataset
+      const states = parseCounterStates(data.states)
+      const fields = data.name.split('.')
+      var steps = parent.find('.resource-counter-syb-step')
+      const halfs = Number(data[states['/']]) || 0
+      const crossed = Number(data[states.x]) || 0
+  
+      if (index < 0 || index > steps.length) {
+        return
+      }
+  
+      const allStates = ['', ...Object.keys(states)]
+      const currentState = allStates.indexOf(oldState)
+      if (currentState < 0) {
+        return
+      }
+  
+      const newState = allStates[(currentState + 1) % allStates.length]
+      steps[index].dataset.state = newState
+  
+      if ((oldState !== '' && oldState !== '-') || (oldState !== '')) {
+        data[states[oldState]] = Number(data[states[oldState]]) - 1
+      }
+  
+      // If the step was removed we also need to subtract from the maximum.
+      if (oldState !== '' && newState === '') {
+        data[states['-']] = Number(data[states['-']]) - 1
+      }
+  
+      if (newState !== '') {
+        data[states[newState]] = Number(data[states[newState]]) + Math.max(index + 1 - halfs - crossed, 1)
       }
   
       const newValue = Object.values(states).reduce(function (obj, k) {
@@ -878,6 +936,41 @@
         }
   
         $(this).find('.resource-counter-step').each(function () {
+          this.dataset.state = ''
+          if (this.dataset.index < values.length) {
+            this.dataset.state = values[this.dataset.index]
+          }
+        })
+
+        $(this).find('.resource-counter2-step').each(function () {
+          this.dataset.state = ''
+          if (this.dataset.index < values.length) {
+            this.dataset.state = values[this.dataset.index]
+          }
+        })
+
+        $(this).find('.resource-counter3-step').each(function () {
+          this.dataset.state = ''
+          if (this.dataset.index < values.length) {
+            this.dataset.state = values[this.dataset.index]
+          }
+        })
+      })
+    }
+
+    _setupSquareCountersSyb (html) {
+      html.find('.resource-counter-syb').each(function () {
+        const data = this.dataset
+        const states = parseCounterStates(data.states)
+  
+        const halfs = Number(data[states['/']]) || 0
+        const crossed = Number(data[states.x]) || 0
+  
+        const values = new Array(halfs)
+        values.fill('/', 0, halfs)
+        values.fill('x', halfs - crossed, halfs)
+
+        $(this).find('.resource-counter-syb-step').each(function () {
           this.dataset.state = ''
           if (this.dataset.index < values.length) {
             this.dataset.state = values[this.dataset.index]

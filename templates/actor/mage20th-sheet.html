@@ -30,17 +30,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="resource flex-group-center">
-                    <label for="data.willpower" class="resource-label abilityrollable" data-roll="{{data.willpower.max}}"
-                        data-label="MA20th.Willpower">{{localize "MA20th.Willpower"}}</label>
-                    <div class="resource-content flexrow flex-center flex-between">
-                        <div class="resource-counter" data-states="-:max,x:temp" data-max="{{data.willpower.max}}" data-temp="{{data.willpower.temp}}" data-name="data.willpower">
-                            {{#numLoop 10}}
-                            <span class="resource-counter-step" data-index="{{this}}" data-state=""></span>
-                            {{/numLoop}}
-                        </div>
-                    </div>
-                </div>
                 <div class="resource flex-group-center arete">
                     <label for="data.arete.value" class="resource-label abilityrollable" data-roll="{{data.arete.value}}"
                         data-label="MA20th.Arete">{{localize "MA20th.Arete"}}</label>
@@ -52,11 +41,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
-            use both the "grid" and "grid-Ncol" class where "N" can be any number
-            from 1 to 12 and will create that number of columns. --}}
-            <div class="resources grid grid-4col">
                 <div class="resource flex-group-center exp">
                     <label for="data.exp" class="resource-label">{{localize "MA20th.Exp"}}</label>
                     <div class="resource-content flexrow flex-center flex-between">
@@ -65,37 +49,45 @@
                         <input type="number" name="data.exp.max" value="{{data.exp.max}}" data-dtype="Number" />
                     </div>
                 </div>
+            </div>
+            {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
+            use both the "grid" and "grid-Ncol" class where "N" can be any number
+            from 1 to 12 and will create that number of columns. --}}
+            <div class="resources grid grid-2col">
                 <div class="resource flex-group-center">
                     <label for="data.magika.quintessence" class="resource-label">{{localize "MA20th.Quintessence"}}</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <div class="resource-counter" data-states="-:value" data-value="{{data.quintessence.value}}" data-name="data.quintessence">
                             {{#numLoop 10}}
-                            <span class="resource-counter-step" data-index="{{this}}" data-state=""></span>
+                            <span class="resource-counter2-step" data-index="{{this}}" data-state=""></span>
                             {{/numLoop}}
                         </div>
                     </div>
                     <label for="data.magika.paradox" class="resource-label">{{localize "MA20th.Paradox"}}</label>
                     <div class="resource-content flexrow flex-center flex-between">
-                        <div class="resource-counter" data-states="-:value" data-value="{{data.paradox.value}}" data-name="data.paradox">
-                            
+                        <div class="resource-counter" data-states="-:value" data-value="{{data.paradox.value}}" data-name="data.paradox">      
                             {{#numLoop 10}}
-                            <span class="resource-counter-step" data-index="{{this}}" data-state=""></span>
+                            <span class="resource-counter3-step" data-index="{{this}}" data-state=""></span>
                             {{/numLoop}}
                         </div>
                     </div>
                 </div>
                 <div class="resource flex-group-center">
-                    <label for="placeholder" class="resource-label">{{localize "MA20th.Arete"}}</label>
+                    <label for="data.willpower" class="resource-label abilityrollable" data-roll="{{willpowerRollValue data.willpower}}"
+                        data-label="MA20th.Willpower">{{localize "MA20th.Willpower"}}</label>
                     <div class="resource-content flexrow flex-center flex-between">
-                        <button class="rollable" type="text" name="Arete" data-roll="{{data.arete.value}}"
-                            data-label="{{localize 'MA20th.RollingArete'}}...">{{localize "MA20th.Roll"}}</button>
+                        <div class="resource-counter" data-states="-:max,x:temp" data-max="{{data.willpower.max}}" data-temp="{{data.willpower.temp}}" data-name="data.willpower">
+                            {{#numLoop 10}}
+                            <span class="resource-counter-step" data-index="{{this}}" data-state=""></span>
+                            {{/numLoop}}
+                        </div>
                     </div>
-                </div>
-                <div class="resource flex-group-center">
-                    <label for="placeholder" class="resource-label">{{localize "MA20th.Alertness"}}</label>
                     <div class="resource-content flexrow flex-center flex-between">
-                        <button class="rollable" type="text" name="Alertness" data-roll="{{perception data.abilities.perception.value data.skills.alertness.value}}"
-                            data-label="{{localize 'MA20th.Alertness'}}...">{{localize "MA20th.Roll"}}</button>
+                        <div class="resource-counter-syb" data-states="/:spent" data-spent="{{data.willpower.spent}}" data-name="data.willpower">
+                            {{#numLoop 10}}
+                            <span class="resource-counter-syb-step" data-index="{{this}}" data-state=""></span>
+                            {{/numLoop}}
+                        </div>
                     </div>
                 </div>
             </div>

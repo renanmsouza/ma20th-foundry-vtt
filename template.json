@@ -10,7 +10,8 @@
         },
         "willpower": {
           "temp": 0,
-          "max": 0
+          "max": 0,
+          "spent": 0
         }
       }
     },
@@ -79,30 +80,35 @@
       "paradox": {
         "value": 0
       },
+      "magika": {
+        "quintessence": 0,
+        "paradox": 0,
+        "max": 20
+      },
 
       "abilities": {
         "strength": {
-          "value": 0,
+          "value": 1,
           "name": "MA20th.Strength"
         },
         "charisma": {
-          "value": 0,
+          "value": 1,
           "name": "MA20th.Charisma"
         },
         "intelligence": {
-          "value": 0,
+          "value": 1,
           "name": "MA20th.Intelligence"
         },
         "dexterity": {
-          "value": 0,
+          "value": 1,
           "name": "MA20th.Dexterity"
         },
         "manipulation": {
-          "value": 0,
+          "value": 1,
           "name": "MA20th.Manipulation"
         },
         "wits": {
-          "value": 0,
+          "value": 1,
           "name": "MA20th.Wits"
         },
         "stamina": {
@@ -110,11 +116,11 @@
           "name": "MA20th.Stamina"
         },
         "appearance": {
-          "value": 0,
+          "value": 1,
           "name": "MA20th.Appearance"
         },
         "perception": {
-          "value": 0,
+          "value": 1,
           "name": "MA20th.Perception"
         }
       },

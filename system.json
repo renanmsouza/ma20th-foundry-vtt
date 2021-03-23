@@ -1,7 +1,7 @@
 {
   "name": "ma20th",
-  "title": "Mago Ascenção edição 20 Anos",
-  "description": "Mago Ascenção Edição 20 Anos",
+  "title": "Mage: The Ascension 20th Anniversary Edition",
+  "description": "Mage: The Ascension 20th Anniversary Edition System for Foundry VTT",
   "version": "1.0.0",
   "minimumCoreVersion": "0.7.0",
   "compatibleCoreVersion": "0.7.9",

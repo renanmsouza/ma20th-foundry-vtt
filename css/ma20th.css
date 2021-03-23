@@ -228,8 +228,8 @@
 
 .MA20th .sheet-header {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 215px;
-  flex: 0 0 215px;
+  -ms-flex: 0 0 220px;
+  flex: 0 0 220px;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -421,6 +421,7 @@
     );
 }
 
+/* Resource boxes 1 CSS */
 .MA20th .resource-counter .resource-counter-step {
   height: 14px;
   width: 14px;
@@ -468,7 +469,148 @@
     );
 }
 
+/* Resource boxes 2 CSS */
+.MA20th .resource-counter .resource-counter2-step {
+  height: 14px;
+  width: 14px;
+  border: 1px solid black;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.MA20th .resource-counter .resource-counter2-step[data-state="-"] {
+  background-color: rgb(28, 224, 238);
+}
+
+.MA20th .resource-counter .resource-counter2-step[data-state="/"] {
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    );
+}
+
+.MA20th .resource-counter .resource-counter2-step[data-state="x"] {
+  background:
+    linear-gradient(
+      45deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    ),
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    ); 
+}
+
+/* Resource boxes 3 CSS */
+.MA20th .resource-counter .resource-counter3-step {
+  height: 14px;
+  width: 14px;
+  border: 1px solid black;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.MA20th .resource-counter .resource-counter3-step[data-state="-"] {
+  background-color: rgb(0, 0, 0);
+}
+
+.MA20th .resource-counter .resource-counter3-step[data-state="/"] {
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    );
+}
+
+.MA20th .resource-counter .resource-counter3-step[data-state="x"] {
+  background:
+    linear-gradient(
+      45deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    ),
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    ); 
+}
+
+/* Resource boxes syb CSS */
+.MA20th .resource-counter-syb .resource-counter-syb-step {
+  height: 14px;
+  width: 14px;
+  border: 1px solid black;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.MA20th .resource-counter-syb .resource-counter-syb-step[data-state="/"] {
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    );
+}
+
+.MA20th .resource-counter-syb .resource-counter-syb-step[data-state="x"] {
+  background:
+    linear-gradient(
+      45deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    ),
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    ); 
+}
+
 .MA20th .flex-group-center:not(.flexrow) .resource-value,
+.MA20th .flex-group-center:not(.flexrow) .resource-counter-syb,
 .MA20th .flex-group-center:not(.flexrow) .resource-counter {
   margin-top: 5px;
 }
