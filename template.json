@@ -88,27 +88,27 @@
 
       "abilities": {
         "strength": {
-          "value": 1,
+          "value": 0,
           "name": "MA20th.Strength"
         },
         "charisma": {
-          "value": 1,
+          "value": 0,
           "name": "MA20th.Charisma"
         },
         "intelligence": {
-          "value": 1,
+          "value": 0,
           "name": "MA20th.Intelligence"
         },
         "dexterity": {
-          "value": 1,
+          "value": 0,
           "name": "MA20th.Dexterity"
         },
         "manipulation": {
-          "value": 1,
+          "value": 0,
           "name": "MA20th.Manipulation"
         },
         "wits": {
-          "value": 1,
+          "value": 0,
           "name": "MA20th.Wits"
         },
         "stamina": {
@@ -116,11 +116,11 @@
           "name": "MA20th.Stamina"
         },
         "appearance": {
-          "value": 1,
+          "value": 0,
           "name": "MA20th.Appearance"
         },
         "perception": {
-          "value": 1,
+          "value": 0,
           "name": "MA20th.Perception"
         }
       },

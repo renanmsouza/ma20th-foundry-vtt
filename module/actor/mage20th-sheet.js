@@ -202,6 +202,7 @@
       this._setupDotCounters(html)
       this._setupSquareCounters(html)
       this._setupSquareCountersSyb(html)
+      this._setupSquareCounters2cf(html)
   
       // Everything below here is only needed if the sheet is editable
       if (!this.options.editable) return
@@ -254,6 +255,7 @@
       html.find('.resource-counter > .resource-counter3-step').click(this._onSquareCounterChange.bind(this))
 
       html.find('.resource-counter-syb > .resource-counter-syb-step').click(this._onSquareSybCounterChange.bind(this))
+      html.find('.resource-counter-2cf > .resource-counter-2cf-step').click(this._onSquare2cfCounterChange.bind(this))
   
       // Drag events for macros.
       // if (this.actor.owner) {
@@ -882,6 +884,53 @@
   
       this._assignToActorField(fields, newValue)
     }
+
+    _onSquare2cfCounterChange (event) {
+      event.preventDefault()
+      const element = event.currentTarget
+      const index = Number(element.dataset.index)
+      const oldState = element.dataset.state || ''
+      const parent = $(element.parentNode)
+      const data = parent[0].dataset
+      const states = parseCounterStates(data.states)
+      const fields = data.name.split('.')
+      const steps = parent.find('.resource-counter-2cf-step')
+      const fulls = Number(data[states['-']]) || 0
+      const halfs = Number(data[states['/']]) || 0
+  
+      if (index < 0 || index > steps.length) {
+        return
+      }
+  
+      const allStates = ['', ...Object.keys(states)]
+      const currentState = allStates.indexOf(oldState)
+      if (currentState < 0) {
+        return
+      }
+  
+      const newState = allStates[(currentState + 1) % allStates.length]
+      steps[index].dataset.state = newState
+  
+      if ((oldState !== '' && oldState !== '-') || (oldState !== '')) {
+        data[states[oldState]] = Number(data[states[oldState]]) - 1
+      }
+  
+      // If the step was removed we also need to subtract from the maximum.
+      if (oldState !== '' && newState === '') {
+        data[states['-']] = Number(data[states['-']]) - 1
+      }
+  
+      if (newState !== '') {
+        data[states[newState]] = Number(data[states[newState]]) + Math.max(index + 1 - fulls - halfs, 1)
+      }
+  
+      const newValue = Object.values(states).reduce(function (obj, k) {
+        obj[k] = Number(data[k]) || 0
+        return obj
+      }, {})
+  
+      this._assignToActorField(fields, newValue)
+    }
   
     _onDotCounterChange (event) {
       event.preventDefault()
@@ -971,6 +1020,32 @@
         values.fill('x', halfs - crossed, halfs)
 
         $(this).find('.resource-counter-syb-step').each(function () {
+          this.dataset.state = ''
+          if (this.dataset.index < values.length) {
+            this.dataset.state = values[this.dataset.index]
+          }
+        })
+      })
+    }
+
+    _setupSquareCounters2cf (html) {
+      html.find('.resource-counter-2cf').each(function () {
+        const data = this.dataset
+        const states = parseCounterStates(data.states)
+  
+        const fulls = Number(data[states['-']]) || 0
+        const halfs = Number(data[states['/']]) || 0
+
+        console.log(fulls + ' | ' + halfs)
+  
+        const values = new Array(fulls + halfs)
+
+        values.fill('-', 0, fulls)
+        values.fill('/', fulls, fulls + halfs)
+
+        console.log(values);
+
+        $(this).find('.resource-counter-2cf-step').each(function () {
           this.dataset.state = ''
           if (this.dataset.index < values.length) {
             this.dataset.state = values[this.dataset.index]

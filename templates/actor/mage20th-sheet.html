@@ -57,17 +57,17 @@
                 <div class="resource flex-group-center">
                     <label for="data.magika.quintessence" class="resource-label">{{localize "MA20th.Quintessence"}}</label>
                     <div class="resource-content flexrow flex-center flex-between">
-                        <div class="resource-counter" data-states="-:value" data-value="{{data.quintessence.value}}" data-name="data.quintessence">
+                        <div class="resource-counter-2cf" data-states="-:quintessence,/:paradox" data-quintessence="{{data.magika.quintessence}}" data-paradox="{{data.magika.paradox}}" data-name="data.magika">
                             {{#numLoop 10}}
-                            <span class="resource-counter2-step" data-index="{{this}}" data-state=""></span>
+                            <span class="resource-counter-2cf-step" data-index="{{this}}" data-state=""></span>
                             {{/numLoop}}
                         </div>
                     </div>
                     <label for="data.magika.paradox" class="resource-label">{{localize "MA20th.Paradox"}}</label>
                     <div class="resource-content flexrow flex-center flex-between">
-                        <div class="resource-counter" data-states="-:value" data-value="{{data.paradox.value}}" data-name="data.paradox">      
+                        <div class="resource-counter-2cf" data-states="-:quintessence,/:paradox" data-quintessence="{{data.magika.quintessence}}" data-paradox="{{data.magika.paradox}}" data-name="data.magika">      
                             {{#numLoop 10}}
-                            <span class="resource-counter3-step" data-index="{{this}}" data-state=""></span>
+                            <span class="resource-counter-2cf-step" data-index="{{this}}" data-state=""></span>
                             {{/numLoop}}
                         </div>
                     </div>
