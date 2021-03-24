@@ -9,7 +9,7 @@
     static get defaultOptions () {
       return mergeObject(super.defaultOptions, {
         classes: ['MA20th', 'sheet', 'actor'],
-        template: 'systems/MA20th/templates/actor/mage20th-sheet.html',
+        template: 'systems/ma20th/templates/actor/mage20th-sheet.html',
         width: 1000,
         height: 900,
         tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'stats' }]
@@ -440,13 +440,13 @@
         label = label + `<p class="roll-label">${game.i18n.localize('MA20th.Successes')}: ${totalSuccess}</p>`
   
         for (let i = 0, j = critSuccess; i < j; i++) {
-          label = label + '<img src="systems/MA20th/assets/images/normal-crit.png" alt="Normal Crit" class="roll-img">'
+          label = label + '<img src="systems/ma20th/assets/images/normal-crit.png" alt="Normal Crit" class="roll-img">'
         }
         for (let i = 0, j = success; i < j; i++) {
-          label = label + '<img src="systems/MA20th/assets/images/normal-success.png" alt="Normal Success" class="roll-img">'
+          label = label + '<img src="systems/ma20th/assets/images/normal-success.png" alt="Normal Success" class="roll-img">'
         }
         for (let i = 0, j = fail; i < j; i++) {
-          label = label + '<img src="systems/MA20th/assets/images/normal-fail.png" alt="Normal Fail" class="roll-img">'
+          label = label + '<img src="systems/ma20th/assets/images/normal-fail.png" alt="Normal Fail" class="roll-img">'
         }
   
         rollResult.toMessage({
@@ -568,28 +568,28 @@
       label = label + `<p class="roll-label">${game.i18n.localize('MA20th.Successes')}: ${totalSuccess} ${difficultyResult}</p>`
   
       for (let i = 0, j = critSuccess; i < j; i++) {
-        label = label + '<img src="systems/MA20th/assets/images/normal-crit.png" alt="Normal Crit" class="roll-img">'
+        label = label + '<img src="systems/ma20th/assets/images/normal-crit.png" alt="Normal Crit" class="roll-img">'
       }
       for (let i = 0, j = success; i < j; i++) {
-        label = label + '<img src="systems/MA20th/assets/images/normal-success.png" alt="Normal Success" class="roll-img">'
+        label = label + '<img src="systems/ma20th/assets/images/normal-success.png" alt="Normal Success" class="roll-img">'
       }
       for (let i = 0, j = fail; i < j; i++) {
-        label = label + '<img src="systems/MA20th/assets/images/normal-fail.png" alt="Normal Fail" class="roll-img">'
+        label = label + '<img src="systems/ma20th/assets/images/normal-fail.png" alt="Normal Fail" class="roll-img">'
       }
   
       label = label + '<br>'
   
       for (let i = 0, j = hungerCritSuccess; i < j; i++) {
-        label = label + '<img src="systems/MA20th/assets/images/red-crit.png" alt="Hunger Crit" class="roll-img">'
+        label = label + '<img src="systems/ma20th/assets/images/red-crit.png" alt="Hunger Crit" class="roll-img">'
       }
       for (let i = 0, j = hungerSuccess; i < j; i++) {
-        label = label + '<img src="systems/MA20th/assets/images/red-success.png" alt="Hunger Success" class="roll-img">'
+        label = label + '<img src="systems/ma20th/assets/images/red-success.png" alt="Hunger Success" class="roll-img">'
       }
       for (let i = 0, j = hungerCritFail; i < j; i++) {
-        label = label + '<img src="systems/MA20th/assets/images/bestial-fail.png" alt="Bestial Fail" class="roll-img">'
+        label = label + '<img src="systems/ma20th/assets/images/bestial-fail.png" alt="Bestial Fail" class="roll-img">'
       }
       for (let i = 0, j = hungerFail; i < j; i++) {
-        label = label + '<img src="systems/MA20th/assets/images/red-fail.png" alt="Hunger Fail" class="roll-img">'
+        label = label + '<img src="systems/ma20th/assets/images/red-fail.png" alt="Hunger Fail" class="roll-img">'
       }
   
       rollResult.toMessage({

@@ -136,16 +136,16 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
   dice3d.addDicePreset({
     type: 'dv',
     labels: [
-      'systems/MA20th/assets/images/normal-fail-dsn.png',
-      'systems/MA20th/assets/images/normal-fail-dsn.png',
-      'systems/MA20th/assets/images/normal-fail-dsn.png',
-      'systems/MA20th/assets/images/normal-fail-dsn.png',
-      'systems/MA20th/assets/images/normal-fail-dsn.png',
-      'systems/MA20th/assets/images/normal-success-dsn.png',
-      'systems/MA20th/assets/images/normal-success-dsn.png',
-      'systems/MA20th/assets/images/normal-success-dsn.png',
-      'systems/MA20th/assets/images/normal-success-dsn.png',
-      'systems/MA20th/assets/images/normal-crit-dsn.png'
+      'systems/ma20th/assets/images/normal-fail-dsn.png',
+      'systems/ma20th/assets/images/normal-fail-dsn.png',
+      'systems/ma20th/assets/images/normal-fail-dsn.png',
+      'systems/ma20th/assets/images/normal-fail-dsn.png',
+      'systems/ma20th/assets/images/normal-fail-dsn.png',
+      'systems/ma20th/assets/images/normal-success-dsn.png',
+      'systems/ma20th/assets/images/normal-success-dsn.png',
+      'systems/ma20th/assets/images/normal-success-dsn.png',
+      'systems/ma20th/assets/images/normal-success-dsn.png',
+      'systems/ma20th/assets/images/normal-crit-dsn.png'
     ],
     colorset: 'white',
     fontScale: 0.5,
@@ -154,16 +154,16 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
   dice3d.addDicePreset({
     type: 'dh',
     labels: [
-      'systems/MA20th/assets/images/bestial-fail-dsn.png',
-      'systems/MA20th/assets/images/red-fail-dsn.png',
-      'systems/MA20th/assets/images/red-fail-dsn.png',
-      'systems/MA20th/assets/images/red-fail-dsn.png',
-      'systems/MA20th/assets/images/red-fail-dsn.png',
-      'systems/MA20th/assets/images/red-success-dsn.png',
-      'systems/MA20th/assets/images/red-success-dsn.png',
-      'systems/MA20th/assets/images/red-success-dsn.png',
-      'systems/MA20th/assets/images/red-success-dsn.png',
-      'systems/MA20th/assets/images/red-crit-dsn.png'
+      'systems/ma20th/assets/images/bestial-fail-dsn.png',
+      'systems/ma20th/assets/images/red-fail-dsn.png',
+      'systems/ma20th/assets/images/red-fail-dsn.png',
+      'systems/ma20th/assets/images/red-fail-dsn.png',
+      'systems/ma20th/assets/images/red-fail-dsn.png',
+      'systems/ma20th/assets/images/red-success-dsn.png',
+      'systems/ma20th/assets/images/red-success-dsn.png',
+      'systems/ma20th/assets/images/red-success-dsn.png',
+      'systems/ma20th/assets/images/red-success-dsn.png',
+      'systems/ma20th/assets/images/red-crit-dsn.png'
     ],
     colorset: 'black',
     system: 'MA20th'

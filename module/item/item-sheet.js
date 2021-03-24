@@ -17,7 +17,7 @@ export class VampireItemSheet extends ItemSheet {
 
   /** @override */
   get template () {
-    const path = 'systems/MA20th/templates/item'
+    const path = 'systems/ma20th/templates/item'
     // Return a single sheet for all item types.
     // return `${path}/item-sheet.html`;
 
