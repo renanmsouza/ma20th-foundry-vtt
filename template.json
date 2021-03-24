@@ -352,32 +352,8 @@
           "powers": [],
           "visible": true
         },
-        "entropy": {
-          "name": "MA20th.Entropy",
-          "value": 0,
-          "powers": [],
-          "visible": true
-        },
-        "forces": {
-          "name": "MA20th.Forces",
-          "value": 0,
-          "powers": [],
-          "visible": true
-        },
         "life": {
           "name": "MA20th.Life",
-          "value": 0,
-          "powers": [],
-          "visible": true
-        },
-        "matter": {
-          "name": "MA20th.Matter",
-          "value": 0,
-          "powers": [],
-          "visible": true
-        }, 
-        "mind": {
-          "name": "MA20th.Mind",
           "value": 0,
           "powers": [],
           "visible": true
@@ -388,8 +364,32 @@
           "powers": [],
           "visible": true
         },
+        "entropy": {
+          "name": "MA20th.Entropy",
+          "value": 0,
+          "powers": [],
+          "visible": true
+        },
+        "matter": {
+          "name": "MA20th.Matter",
+          "value": 0,
+          "powers": [],
+          "visible": true
+        }, 
         "spirit": {
           "name": "MA20th.Spirit",
+          "value": 0,
+          "powers": [],
+          "visible": true
+        },
+        "forces": {
+          "name": "MA20th.Forces",
+          "value": 0,
+          "powers": [],
+          "visible": true
+        },
+        "mind": {
+          "name": "MA20th.Mind",
           "value": 0,
           "powers": [],
           "visible": true
@@ -404,7 +404,7 @@
     }
   },
   "Item": {
-    "types": ["feature", "power", "specialty", "background"],
+    "types": ["feature", "power", "specialty", "background", "ranged-weapons", "melee-weapons", "armors-shields"],
     "templates": {
       "base": {
         "description": ""
@@ -431,6 +431,30 @@
     "background": {
       "templates": ["base"],
       "value": 0
+    },
+    "ranged-weapons": {
+      "name": "",
+      "damage": "",
+      "range": "",
+      "rate": "",
+      "clip": "",
+      "conceal": "",
+      "notes": ""
+    }, 
+    "melee-weapons": {
+      "name": "",
+      "difficulty": 0,
+      "damage": "",
+      "damage-type": "",
+      "conceal": "",
+      "notes": ""
+    }, 
+    "armors-shields": {
+      "name": "",
+      "type": "",
+      "rating": 0,
+      "block-bonus": 0,
+      "penalty": 0
     }
   }
 }

@@ -117,12 +117,54 @@
       // Prepare items.
       if (this.actor.data.type === 'character') {
         this._prepareCharacterItems(data)
+        this._prepareCharacterAbilities(data)
       }
   
       data.blood_potency = BLOOD_POTENCY
   
       return data
     }
+
+    /**
+       * Default value 1 to all Abilities.
+       *
+       * @param {Object} actorData The actor to prepare.
+       *
+       * @return {undefined}
+       */
+     _prepareCharacterAbilities (sheetData) {
+        const actorData = sheetData.data.abilities
+
+        if (actorData.strength.value === 0) {
+          actorData.strength.value = 1
+        }
+        if (actorData.charisma.value === 0) {
+          actorData.charisma.value = 1
+        }
+        if (actorData.intelligence.value === 0) {
+          actorData.intelligence.value = 1
+        }
+        if (actorData.dexterity.value === 0) {
+          actorData.dexterity.value = 1
+        }
+        if (actorData.manipulation.value === 0) {
+          actorData.manipulation.value = 1
+        }
+        if (actorData.wits.value === 0) {
+          actorData.wits.value = 1
+        }
+        if (actorData.stamina.value === 0) {
+          actorData.stamina.value = 1
+        }
+        if (actorData.appearance.value === 0) {
+          actorData.appearance.value = 1
+        }
+        if (actorData.perception.value === 0) {
+          actorData.perception.value = 1
+        }
+     }
+
+
   
     /**
        * Organize and classify Items for Character sheets.
@@ -244,9 +286,6 @@
 
       // Rollable Abilities
       html.find('.abilityrollable').click(this._onAbilityRollDialog.bind(this))
-  
-      // Rollable Vampire powers.
-      html.find('.power-rollable').click(this._onVampireRoll.bind(this))
   
       html.find('.resource-value > .resource-value-step').click(this._onDotCounterChange.bind(this))
       html.find('.resource-value > .resource-value-empty').click(this._onDotCounterEmpty.bind(this))
@@ -903,9 +942,9 @@
       }
   
       const allStates = ['', ...Object.keys(states)]
-      const currentState = allStates.indexOf(oldState)
+      var currentState = allStates.indexOf(oldState)
       if (currentState < 0) {
-        return
+        currentState = 0
       }
   
       const newState = allStates[(currentState + 1) % allStates.length]
@@ -914,11 +953,6 @@
       if ((oldState !== '' && oldState !== '-') || (oldState !== '')) {
         data[states[oldState]] = Number(data[states[oldState]]) - 1
       }
-  
-      // // If the step was removed we also need to subtract from the maximum.
-      // if (oldState !== '' && newState === '') {
-      //   data[states['-']] = Number(data[states['-']]) - 1
-      // }
   
       if (newState !== '') {
         data[states[newState]] = Number(data[states[newState]]) + Math.max(index + 1 - fulls - halfs, 1)
@@ -1032,20 +1066,14 @@
       html.find('.resource-counter-2cf').each(function () {
         const data = this.dataset
         const states = parseCounterStates(data.states)
-
-        console.log(data);
   
         const fulls = Number(data[states['-']]) || 0
         const halfs = Number(data[states['/']]) || 0
-
-        console.log(fulls + ' | ' + halfs)
   
-        const values = new Array(fulls + halfs)
+        const values = new Array(20)
 
         values.fill('-', 0, fulls)
-        values.fill('/', fulls, fulls + halfs)
-
-        console.log(values);
+        values.fill('/', 20 - halfs, 20)
 
         $(this).find('.resource-counter-2cf-step').each(function () {
           this.dataset.state = ''

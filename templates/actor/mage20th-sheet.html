@@ -36,7 +36,7 @@
                     <div class="resource-content flexrow flex-center flex-between">
                         <div class="resource-counter" data-states="-:value" data-value="{{data.arete.value}}" data-name="data.arete">
                             {{#numLoop 10}}
-                            <span class="resource-counter-step" data-index="{{this}}" data-state=""></span>
+                            <span class="resource-counter2-step" data-index="{{this}}" data-state=""></span>
                             {{/numLoop}}
                         </div>
                     </div>
@@ -63,14 +63,6 @@
                             {{/numLoop}}
                         </div>
                     </div>
-                    <!-- <label for="data.magika.paradox" class="resource-label">{{localize "MA20th.Paradox"}}</label>
-                    <div class="resource-content flexrow flex-center flex-between">
-                        <div class="resource-counter-2cf" data-states="-:quintessence,/:paradox" data-quintessence="{{data.magika.quintessence}}" data-paradox="{{data.magika.paradox}}" data-name="data.magika">      
-                            {{#numLoop 10}}
-                            <span class="resource-counter-2cf-step" data-index="{{this}}" data-state=""></span>
-                            {{/numLoop}}
-                        </div>
-                    </div> -->
                 </div>
                 <div class="resource flex-group-center">
                     <label for="data.willpower" class="resource-label abilityrollable" data-roll="{{willpowerRollValue data.willpower}}"
@@ -78,7 +70,7 @@
                     <div class="resource-content flexrow flex-center flex-between">
                         <div class="resource-counter" data-states="-:max,x:temp" data-max="{{data.willpower.max}}" data-temp="{{data.willpower.temp}}" data-name="data.willpower">
                             {{#numLoop 10}}
-                            <span class="resource-counter-step" data-index="{{this}}" data-state=""></span>
+                            <span class="resource-counter2-step" data-index="{{this}}" data-state=""></span>
                             {{/numLoop}}
                         </div>
                     </div>

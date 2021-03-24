@@ -16,9 +16,7 @@
 .rollable:hover,
 .rollable:focus,
 .vrollable:hover,
-.vrollable:focus,
-.power-rollable:hover,
-.power-rollable:focus {
+.vrollable:focus {
   color: #000;
   text-shadow: 0 0 10px red;
   cursor: pointer;
@@ -476,10 +474,11 @@
   border: 1px solid black;
   display: inline-block;
   cursor: pointer;
+  border-radius: 50%;
 }
 
 .MA20th .resource-counter .resource-counter2-step[data-state="-"] {
-  background-color: rgb(28, 224, 238);
+  background-color: #0B108C;
 }
 
 .MA20th .resource-counter .resource-counter2-step[data-state="/"] {
@@ -609,7 +608,7 @@
     ); 
 }
 
-/* Resource boxes 2 color-flags CSS */
+/* Resource boxes 2 color-flags for Quintessence and Paradox CSS */
 .MA20th .resource-counter-2cf .resource-counter-2cf-step {
   height: 14px;
   width: 14px;
@@ -625,8 +624,6 @@
 .MA20th .resource-counter-2cf .resource-counter-2cf-step[data-state="/"] {
   background-color: rgb(0, 0, 0);
 }
-
-
 
 .MA20th .flex-group-center:not(.flexrow) .resource-value,
 .MA20th .flex-group-center:not(.flexrow) .resource-counter-syb,
