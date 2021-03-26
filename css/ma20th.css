@@ -625,9 +625,131 @@
   background-color: rgb(0, 0, 0);
 }
 
+/* Resource box Buttons CSS */
+.MA20th .resource-button {
+  height: 14px;
+  width: 14px;
+  border: 1px solid black;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.MA20th .resource-button[data-state="+"] {
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 43%,
+      green 45%,
+      green 55%,
+      transparent 57%,
+      transparent 100%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 43%,
+      green 45%,
+      green 55%,
+      transparent 57%,
+      transparent 100%
+  );
+}
+
+.MA20th .resource-button[data-state="-"] {
+  background:
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 43%,
+      red 45%,
+      red 55%,
+      transparent 57%,
+      transparent 100%
+    );
+}
+
+/* Resource boxe Vitality CSS */
+.MA20th .resource-counter .resource-vitality-step {
+  height: 14px;
+  width: 14px;
+  border: 1px solid black;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.MA20th .resource-counter .resource-vitality-step[data-state="-"] {
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    );
+}
+
+.MA20th .resource-counter .resource-vitality-step[data-state="/"] {
+  background:
+    linear-gradient(
+      45deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    ),
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    );
+}
+
+.MA20th .resource-counter .resource-vitality-step[data-state="x"] {
+  background:
+    linear-gradient(
+      45deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    ),
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    );
+}
+
 .MA20th .flex-group-center:not(.flexrow) .resource-value,
 .MA20th .flex-group-center:not(.flexrow) .resource-counter-syb,
 .MA20th .flex-group-center:not(.flexrow) .resource-counter-2cf,
+.MA20th .flex-group-center:not(.flexrow) .resource-buttons,
+.MA20th .flex-group-center:not(.flexrow) .resource-vitality,
 .MA20th .flex-group-center:not(.flexrow) .resource-counter {
   margin-top: 5px;
 }

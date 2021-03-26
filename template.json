@@ -4,9 +4,9 @@
     "templates": {
       "base": {
         "health": {
-          "aggravated": 0,
-          "superficial": 0,
-          "max": 0
+          "total": 0,
+          "lethal": 0,
+          "aggravated": 0
         },
         "willpower": {
           "temp": 0,

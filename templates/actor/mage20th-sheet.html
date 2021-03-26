@@ -23,9 +23,9 @@
                 <div class="resource flex-group-center">
                     <label for="data.health" class="resource-label">{{localize "MA20th.Health"}}</label>
                     <div class="resource-content flexrow flex-center flex-between">
-                        <div class="resource-counter" data-states="-:max,/:superficial,x:aggravated" data-max="{{data.health.max}}" data-superficial="{{data.health.superficial}}" data-aggravated="{{data.health.aggravated}}" data-name="data.health">
+                        <div class="resource-counter" data-states="-:total,/:lethal,x:aggravated" data-total="{{data.health.total}}" data-lethal="{{data.health.lethal}}" data-aggravated="{{data.health.aggravated}}" data-name="data.health">
                             {{#numLoop 7}}
-                            <span class="resource-counter-step" data-index="{{this}}" data-state=""></span>
+                            <span class="resource-vitality-step" data-index="{{this}}" data-state=""></span>
                             {{/numLoop}}
                         </div>
                     </div>
@@ -55,7 +55,13 @@
             from 1 to 12 and will create that number of columns. --}}
             <div class="resources grid grid-2col">
                 <div class="resource flex-group-center">
-                    <label for="data.magika.quintessence" class="resource-label">{{localize "MA20th.Quintessence"}} | {{localize "MA20th.Paradox"}}</label>
+                    
+                    <span class="resource-button" data-index="q" data-state="+"></span>
+                    <span class="resource-button" data-index="q" data-state="-"></span>
+                    <label for="data.magika.quintessence" class="resource-label">  {{localize "MA20th.Quintessence"}} | {{localize "MA20th.Paradox"}}  </label>
+                    <span class="resource-button" data-index="p" data-state="-"></span>
+                    <span class="resource-button" data-index="p" data-state="+"></span>
+
                     <div class="resource-content flexrow flex-center flex-between">
                         <div class="resource-counter-2cf" data-states="-:quintessence,/:paradox" data-quintessence="{{data.magika.quintessence}}" data-paradox="{{data.magika.paradox}}" data-name="data.magika">
                             {{#numLoop 20}}
@@ -116,14 +122,13 @@
                 {{/each}}
             </div>
 
-            <label class="resource-label">{{localize "MA20th.Spheres"}}</label>
-            <div class="abilities grid grid-3col flex-group-center">
-                {{#each data.spheres as |sphere key|}}
-                <div class="ability flexrow flex-center">
-                    <label for="data.spheres.{{key}}.value" class="resource-label"
-                        data-roll="{{sphere.value}}" data-label="{{sphere.name}}">{{localize
-                            sphere.name}}</label>
-                    <div class="resource-value" data-value="{{sphere.value}}" data-name="data.spheres.{{key}}.value">
+            <label class="resource-label">{{localize "MA20th.Skills"}}</label>
+            <div class="skills grid grid-3col flex-group-center">
+                {{#each data.skills as |skill key|}}
+                <div class="skill flexrow flex-center">
+                    <label for="data.skills.{{key}}.value" class="resource-label skillrollable" data-roll="{{skill.value}}"
+                        data-label="{{skill.name}}">{{localize skill.name}}</label>
+                    <div class="resource-value" data-value="{{skill.value}}" data-name="data.skills.{{key}}.value">
                         <span class="resource-value-empty"></span>
                         {{#numLoop 5}}
                         <span class="resource-value-step" data-index="{{this}}"></span>
@@ -133,13 +138,14 @@
                 {{/each}}
             </div>
 
-            <label class="resource-label">{{localize "MA20th.Skills"}}</label>
-            <div class="skills grid grid-3col flex-group-center">
-                {{#each data.skills as |skill key|}}
-                <div class="skill flexrow flex-center">
-                    <label for="data.skills.{{key}}.value" class="resource-label skillrollable" data-roll="{{skill.value}}"
-                        data-label="{{skill.name}}">{{localize skill.name}}</label>
-                    <div class="resource-value" data-value="{{skill.value}}" data-name="data.skills.{{key}}.value">
+            <label class="resource-label">{{localize "MA20th.Spheres"}}</label>
+            <div class="abilities grid grid-3col flex-group-center">
+                {{#each data.spheres as |sphere key|}}
+                <div class="ability flexrow flex-center">
+                    <label for="data.spheres.{{key}}.value" class="resource-label"
+                        data-roll="{{sphere.value}}" data-label="{{sphere.name}}">{{localize
+                            sphere.name}}</label>
+                    <div class="resource-value" data-value="{{sphere.value}}" data-name="data.spheres.{{key}}.value">
                         <span class="resource-value-empty"></span>
                         {{#numLoop 5}}
                         <span class="resource-value-step" data-index="{{this}}"></span>

@@ -292,9 +292,11 @@
       html.find('.resource-counter > .resource-counter-step').click(this._onSquareCounterChange.bind(this))
       html.find('.resource-counter > .resource-counter2-step').click(this._onSquareCounterChange.bind(this))
       html.find('.resource-counter > .resource-counter3-step').click(this._onSquareCounterChange.bind(this))
+      html.find('.resource-counter > .resource-vitality-step').click(this._onSquareCounterChange.bind(this))
 
       html.find('.resource-counter-syb > .resource-counter-syb-step').click(this._onSquareSybCounterChange.bind(this))
-      html.find('.resource-counter-2cf > .resource-counter-2cf-step').click(this._onSquare2cfCounterChange.bind(this))
+      html.find('.resource-button').click(this._onSquare2cfCounterChange.bind(this))
+      
   
       // Drag events for macros.
       // if (this.actor.owner) {
@@ -458,8 +460,8 @@
 
     _lifeModifier () {
       var modifier = 0;
-      let currentLife = this.actor.data.data.health.max;
-
+      let currentLife = this.actor.data.data.health.total
+     
       if ((currentLife > 1) && (currentLife <= 3)) {
         modifier = -1;
       } else if ((currentLife > 3) && (currentLife <= 5)){
@@ -842,6 +844,10 @@
       if (steps.length === 0) {
         steps = parent.find('.resource-counter3-step')
       }
+
+      if (steps.length === 0) {
+        steps = parent.find('.resource-vitality-step')
+      }
   
       if (index < 0 || index > steps.length) {
         return
@@ -871,6 +877,7 @@
   
       const newValue = Object.values(states).reduce(function (obj, k) {
         obj[k] = Number(data[k]) || 0
+
         return obj
       }, {})
   
@@ -927,43 +934,35 @@
     _onSquare2cfCounterChange (event) {
       event.preventDefault()
       const element = event.currentTarget
-      const index = Number(element.dataset.index)
-      const oldState = element.dataset.state || ''
-      const parent = $(element.parentNode)
-      const data = parent[0].dataset
-      const states = parseCounterStates(data.states)
-      const fields = data.name.split('.')
-      const steps = parent.find('.resource-counter-2cf-step')
-      const fulls = Number(data[states['-']]) || 0
-      const halfs = Number(data[states['/']]) || 0
-  
-      if (index < 0 || index > steps.length) {
-        return
+      const index = element.dataset.index
+      const state = element.dataset.state
+
+      const totalQ = this.actor.data.data.magika.quintessence
+      const totalP = this.actor.data.data.magika.paradox
+      var stapOver = false
+
+      if ((totalQ + totalP) === 20) {
+        stapOver = true
       }
-  
-      const allStates = ['', ...Object.keys(states)]
-      var currentState = allStates.indexOf(oldState)
-      if (currentState < 0) {
-        currentState = 0
+
+      if (index === 'q') {
+        if (state === '+') {
+          // Add if quintessence < 20
+          (totalQ < 20) && this._assignToActorField(['data', 'magika'], {quintessence: totalQ + 1})
+          // Stap Over Paradox if necessary
+          stapOver && this._assignToActorField(['data', 'magika'], {paradox: totalP - 1})
+        }else{
+          // Remove if quintessence > 0
+          (totalQ > 0) && this._assignToActorField(['data', 'magika'], {quintessence: totalQ - 1})
+        }
+      }else{
+        if (state === '+') {
+          (totalP < 20) && this._assignToActorField(['data', 'magika'], {paradox: totalP + 1})
+          stapOver && this._assignToActorField(['data', 'magika'], {quintessence: totalQ - 1})
+        }else{
+          (totalP > 0) && this._assignToActorField(['data', 'magika'], {paradox: totalP - 1})
+        }
       }
-  
-      const newState = allStates[(currentState + 1) % allStates.length]
-      steps[index].dataset.state = newState
-  
-      if ((oldState !== '' && oldState !== '-') || (oldState !== '')) {
-        data[states[oldState]] = Number(data[states[oldState]]) - 1
-      }
-  
-      if (newState !== '') {
-        data[states[newState]] = Number(data[states[newState]]) + Math.max(index + 1 - fulls - halfs, 1)
-      }
-  
-      const newValue = Object.values(states).reduce(function (obj, k) {
-        obj[k] = Number(data[k]) || 0
-        return obj
-      }, {})
-  
-      this._assignToActorField(fields, newValue)
     }
   
     _onDotCounterChange (event) {
@@ -1033,6 +1032,13 @@
         })
 
         $(this).find('.resource-counter3-step').each(function () {
+          this.dataset.state = ''
+          if (this.dataset.index < values.length) {
+            this.dataset.state = values[this.dataset.index]
+          }
+        })
+
+        $(this).find('.resource-vitality-step').each(function () {
           this.dataset.state = ''
           if (this.dataset.index < values.length) {
             this.dataset.state = values[this.dataset.index]

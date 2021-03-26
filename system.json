@@ -8,7 +8,10 @@
   "templateVersion": 2,
   "author": "Renan M. Souza",
   "esmodules": ["module/main.js"],
-  "styles": ["css/ma20th.css"],
+  "styles": [
+    "css/ma20th.css", 
+    "css/magika/content-buttons.css"
+  ],
   "scripts": [],
   "packs": [],
   "languages": [
