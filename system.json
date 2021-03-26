@@ -2,7 +2,7 @@
   "name": "ma20th",
   "title": "Mage: The Ascension 20th Anniversary Edition",
   "description": "Mage: The Ascension 20th Anniversary Edition System for Foundry VTT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minimumCoreVersion": "0.7.0",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 2,
