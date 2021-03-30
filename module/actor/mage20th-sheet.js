@@ -8,7 +8,7 @@
     /** @override */
     static get defaultOptions () {
       return mergeObject(super.defaultOptions, {
-        classes: ['MA20th', 'sheet', 'actor'],
+        classes: ['ma20th', 'sheet', 'actor'],
         template: 'systems/ma20th/templates/actor/mage20th-sheet.html',
         width: 1000,
         height: 900,

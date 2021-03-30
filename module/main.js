@@ -32,9 +32,9 @@ Hooks.once('init', async function () {
 
   // Register sheet application classes
   Actors.unregisterSheet('core', ActorSheet)
-  Actors.registerSheet('MA20th', MageActorSheet, { makeDefault: true })
+  Actors.registerSheet('ma20th', MageActorSheet, { makeDefault: true })
   Items.unregisterSheet('core', ItemSheet)
-  Items.registerSheet('MA20th', VampireItemSheet, { makeDefault: true })
+  Items.registerSheet('ma20th', VampireItemSheet, { makeDefault: true })
 
   // If you need to add Handlebars helpers, here are a few useful examples:
   Handlebars.registerHelper('concat', function () {
@@ -132,7 +132,7 @@ Hooks.once('ready', async function () {
 })
 
 Hooks.once('diceSoNiceReady', (dice3d) => {
-  dice3d.addSystem({ id: 'MA20th', name: 'VtM5e' }, true)
+  dice3d.addSystem({ id: 'ma20th', name: 'VtM5e' }, true)
   dice3d.addDicePreset({
     type: 'dv',
     labels: [
@@ -149,7 +149,7 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
     ],
     colorset: 'white',
     fontScale: 0.5,
-    system: 'MA20th'
+    system: 'ma20th'
   })
   dice3d.addDicePreset({
     type: 'dh',
@@ -166,7 +166,7 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
       'systems/ma20th/assets/images/red-crit-dsn.png'
     ],
     colorset: 'black',
-    system: 'MA20th'
+    system: 'ma20th'
   })
 })
 
@@ -187,7 +187,7 @@ async function createVampireMacro (data, slot) {
   const item = data.data
 
   // Create the macro command
-  const command = `game.MA20th.rollItemMacro("${item.name}");`
+  const command = `game.ma20th.rollItemMacro("${item.name}");`
   let macro = game.macros.entities.find(m => (m.name === item.name) && (m.command === command))
   if (!macro) {
     macro = await Macro.create({
@@ -195,7 +195,7 @@ async function createVampireMacro (data, slot) {
       type: 'script',
       img: item.img,
       command: command,
-      flags: { 'MA20th.itemMacro': true }
+      flags: { 'ma20th.itemMacro': true }
     })
   }
   game.user.assignHotbarMacro(macro, slot)

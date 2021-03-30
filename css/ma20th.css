@@ -147,24 +147,24 @@
 }
 
 /* New Styles */
-.MA20th .window-content {
+.ma20th .window-content {
   background: #faf5ed;
   font-family: "cormorantLight", sans-serif;
   font-weight: 600;
 }
 
-.MA20th .profile-img,
-.MA20th .item-image img {
+.ma20th .profile-img,
+.ma20th .item-image img {
   background: #0B108C;
 }
 
-.MA20th input {
+.ma20th input {
   font-family: initial;
   background: white;
   border: 1px solid #e0dede;
 }
 
-.MA20th button.rollable {
+.ma20th button.rollable {
   background: #0B108C;
   color: white;
   font-family: "cormorantlight", sans-serif;
@@ -172,21 +172,21 @@
   border: none;
 }
 
-.MA20th .resource-label {
+.ma20th .resource-label {
   font-weight: bold;
 }
 
-.MA20th .window-content .resource-label {
+.ma20th .window-content .resource-label {
   text-transform: initial;
   font-size: 16px;
 }
 
-.MA20th .window-content .abilities .ability .resource-label {
+.ma20th .window-content .abilities .ability .resource-label {
   font-weight: bold;
   font-size: 18px;
 }
 
-.MA20th .window-content nav.sheet-tabs {
+.ma20th .window-content nav.sheet-tabs {
   background: #e6ded0;
   color: #0B108C;
   font-size: 16px;
@@ -195,22 +195,22 @@
   height: 41px;
 }
 
-.MA20th .window-content nav.sheet-tabs a.item.active {
+.ma20th .window-content nav.sheet-tabs a.item.active {
   background: #faf5ed;
   text-decoration: none;
 }
 
-.MA20th .window-content .header-fields .resource {
+.ma20th .window-content .header-fields .resource {
   border: 1px solid #d6d6d2;
   border-radius: 5px;
 }
 
-.MA20th .window-content .abilities,
-.MA20th.sheet.actor .window-content .skills {
+.ma20th .window-content .abilities,
+.ma20th.sheet.actor .window-content .skills {
   border: none;
 }
 
-.MA20th .window-content .sheet-body .tab > .resource-label {
+.ma20th .window-content .sheet-body .tab > .resource-label {
   color: #0B108C;
   border-bottom: 1px solid #0B108C;
   width: 100%;
@@ -218,13 +218,13 @@
   text-transform: uppercase;
 }
 
-/* Styles limited to MA20th sheets */
+/* Styles limited to ma20th sheets */
 
-/* .MA20th .item-form {
+/* .ma20th .item-form {
   font-family: "Roboto", sans-serif;
 } */
 
-.MA20th .sheet-header {
+.ma20th .sheet-header {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 220px;
   flex: 0 0 220px;
@@ -244,7 +244,7 @@
   margin-bottom: 0px;
 }
 
-.MA20th .sheet-header .profile-img {
+.ma20th .sheet-header .profile-img {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 100px;
   flex: 0 0 100px;
@@ -255,75 +255,75 @@
   margin-right: 10px;
 }
 
-.MA20th .sheet-header .header-fields {
+.ma20th .sheet-header .header-fields {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.MA20th .sheet-header h1.charname {
+.ma20th .sheet-header h1.charname {
   height: 50px;
   padding: 0;
   margin: 5px 0;
   border-bottom: 0;
 }
 
-.MA20th .sheet-header h1.charname input {
+.ma20th .sheet-header h1.charname input {
   width: 100%;
   height: 100%;
   margin: 0;
 }
 
-.MA20th .sheet-tabs {
+.ma20th .sheet-tabs {
   -webkit-box-flex: 0;
   -ms-flex: 0;
   flex: 0;
 }
 
-.MA20th .sheet-body,
-.MA20th .sheet-body .tab,
-.MA20th .sheet-body .tab .editor {
+.ma20th .sheet-body,
+.ma20th .sheet-body .tab,
+.ma20th .sheet-body .tab .editor {
   height: 100%;
 
   /* min-height: 100px; */
 }
 
-.MA20th .sheet-body .tab .half-height {
+.ma20th .sheet-body .tab .half-height {
   height: 50%;
 }
 
-.MA20th .tox .tox-editor-container {
+.ma20th .tox .tox-editor-container {
   background: #fff;
 }
 
-.MA20th .tox .tox-edit-area {
+.ma20th .tox .tox-edit-area {
   padding: 0 8px;
 }
 
-.MA20th .tabs {
+.ma20th .tabs {
   height: 40px;
   border-top: 1px solid #aaa;
   border-bottom: 1px solid #aaa;
 }
 
-.MA20th .tabs .item {
+.ma20th .tabs .item {
   line-height: 40px;
   font-weight: bold;
 }
 
-.MA20th .tabs .item.active {
+.ma20th .tabs .item.active {
   text-decoration: underline;
   text-shadow: none;
 }
 
-.MA20th .items-list {
+.ma20th .items-list {
   list-style: none;
   margin: 7px 0;
   padding: 0;
   overflow-y: auto;
 }
 
-.MA20th .items-list .item-header {
+.ma20th .items-list .item-header {
   font-weight: bold;
   min-height: 30px;
   line-height: 24px;
@@ -332,44 +332,44 @@
   color: #0B108C;
 }
 
-.MA20th .items-list .item {
+.ma20th .items-list .item {
   min-height: 30px;
   line-height: 24px;
   padding: 3px 0;
   border-bottom: 1px solid #bbb;
 }
 
-.MA20th .items-list .item .item-image {
+.ma20th .items-list .item .item-image {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 24px;
   flex: 0 0 24px;
   margin-right: 5px;
 }
 
-.MA20th .items-list .item img {
+.ma20th .items-list .item img {
   display: block;
 }
 
-.MA20th .items-list .item-name {
+.ma20th .items-list .item-name {
   margin: 0;
   font-weight: 600;
 }
 
-.MA20th .items-list .item-controls {
+.ma20th .items-list .item-controls {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 86px;
   flex: 0 0 86px;
   text-align: right;
 }
 
-.MA20th .items-list .collapsible:hover,
-.MA20th .items-list .collapsible:focus {
+.ma20th .items-list .collapsible:hover,
+.ma20th .items-list .collapsible:focus {
   color: #000;
   text-shadow: 0 0 10px red;
   cursor: pointer;
 }
 
-.MA20th .items-list .content {
+.ma20th .items-list .content {
   padding: 0 18px;
   max-height: 0;
   overflow: hidden;
@@ -378,7 +378,7 @@
 
 /* Resource boxes CSS */
 
-.MA20th .resource-value .resource-value-step {
+.ma20th .resource-value .resource-value-step {
   height: 14px;
   width: 14px;
   border: 1px solid black;
@@ -387,11 +387,11 @@
   cursor: pointer;
 }
 
-.MA20th .resource-value .resource-value-step.active {
+.ma20th .resource-value .resource-value-step.active {
   background-color: #0B108C;
 }
 
-.MA20th .resource-value .resource-value-empty {
+.ma20th .resource-value .resource-value-empty {
   height: 14px;
   width: 14px;
   border: 1px solid black;
@@ -420,7 +420,7 @@
 }
 
 /* Resource boxes 1 CSS */
-.MA20th .resource-counter .resource-counter-step {
+.ma20th .resource-counter .resource-counter-step {
   height: 14px;
   width: 14px;
   border: 1px solid black;
@@ -428,11 +428,11 @@
   cursor: pointer;
 }
 
-.MA20th .resource-counter .resource-counter-step[data-state="-"] {
+.ma20th .resource-counter .resource-counter-step[data-state="-"] {
   background-color: #0B108C;
 }
 
-.MA20th .resource-counter .resource-counter-step[data-state="/"] {
+.ma20th .resource-counter .resource-counter-step[data-state="/"] {
   background:
     linear-gradient(
       135deg,
@@ -445,7 +445,7 @@
     );
 }
 
-.MA20th .resource-counter .resource-counter-step[data-state="x"] {
+.ma20th .resource-counter .resource-counter-step[data-state="x"] {
   background:
     linear-gradient(
       45deg,
@@ -468,7 +468,7 @@
 }
 
 /* Resource boxes 2 CSS */
-.MA20th .resource-counter .resource-counter2-step {
+.ma20th .resource-counter .resource-counter2-step {
   height: 14px;
   width: 14px;
   border: 1px solid black;
@@ -477,11 +477,11 @@
   border-radius: 50%;
 }
 
-.MA20th .resource-counter .resource-counter2-step[data-state="-"] {
+.ma20th .resource-counter .resource-counter2-step[data-state="-"] {
   background-color: #0B108C;
 }
 
-.MA20th .resource-counter .resource-counter2-step[data-state="/"] {
+.ma20th .resource-counter .resource-counter2-step[data-state="/"] {
   background:
     linear-gradient(
       135deg,
@@ -494,7 +494,7 @@
     );
 }
 
-.MA20th .resource-counter .resource-counter2-step[data-state="x"] {
+.ma20th .resource-counter .resource-counter2-step[data-state="x"] {
   background:
     linear-gradient(
       45deg,
@@ -517,7 +517,7 @@
 }
 
 /* Resource boxes 3 CSS */
-.MA20th .resource-counter .resource-counter3-step {
+.ma20th .resource-counter .resource-counter3-step {
   height: 14px;
   width: 14px;
   border: 1px solid black;
@@ -525,11 +525,11 @@
   cursor: pointer;
 }
 
-.MA20th .resource-counter .resource-counter3-step[data-state="-"] {
+.ma20th .resource-counter .resource-counter3-step[data-state="-"] {
   background-color: rgb(0, 0, 0);
 }
 
-.MA20th .resource-counter .resource-counter3-step[data-state="/"] {
+.ma20th .resource-counter .resource-counter3-step[data-state="/"] {
   background:
     linear-gradient(
       135deg,
@@ -542,7 +542,7 @@
     );
 }
 
-.MA20th .resource-counter .resource-counter3-step[data-state="x"] {
+.ma20th .resource-counter .resource-counter3-step[data-state="x"] {
   background:
     linear-gradient(
       45deg,
@@ -565,7 +565,7 @@
 }
 
 /* Resource boxes symbols CSS */
-.MA20th .resource-counter-syb .resource-counter-syb-step {
+.ma20th .resource-counter-syb .resource-counter-syb-step {
   height: 14px;
   width: 14px;
   border: 1px solid black;
@@ -573,7 +573,7 @@
   cursor: pointer;
 }
 
-.MA20th .resource-counter-syb .resource-counter-syb-step[data-state="/"] {
+.ma20th .resource-counter-syb .resource-counter-syb-step[data-state="/"] {
   background:
     linear-gradient(
       135deg,
@@ -586,7 +586,7 @@
     );
 }
 
-.MA20th .resource-counter-syb .resource-counter-syb-step[data-state="x"] {
+.ma20th .resource-counter-syb .resource-counter-syb-step[data-state="x"] {
   background:
     linear-gradient(
       45deg,
@@ -609,7 +609,7 @@
 }
 
 /* Resource boxes 2 color-flags for Quintessence and Paradox CSS */
-.MA20th .resource-counter-2cf .resource-counter-2cf-step {
+.ma20th .resource-counter-2cf .resource-counter-2cf-step {
   height: 14px;
   width: 14px;
   border: 1px solid black;
@@ -617,16 +617,16 @@
   cursor: pointer;
 }
 
-.MA20th .resource-counter-2cf .resource-counter-2cf-step[data-state="-"] {
+.ma20th .resource-counter-2cf .resource-counter-2cf-step[data-state="-"] {
   background-color: rgb(28, 224, 238);
 }
 
-.MA20th .resource-counter-2cf .resource-counter-2cf-step[data-state="/"] {
+.ma20th .resource-counter-2cf .resource-counter-2cf-step[data-state="/"] {
   background-color: rgb(0, 0, 0);
 }
 
 /* Resource box Buttons CSS */
-.MA20th .resource-button {
+.ma20th .resource-button {
   height: 14px;
   width: 14px;
   border: 1px solid black;
@@ -635,7 +635,7 @@
   border-radius: 50%;
 }
 
-.MA20th .resource-button[data-state="+"] {
+.ma20th .resource-button[data-state="+"] {
   background:
     linear-gradient(
       90deg,
@@ -657,7 +657,7 @@
   );
 }
 
-.MA20th .resource-button[data-state="-"] {
+.ma20th .resource-button[data-state="-"] {
   background:
     linear-gradient(
       180deg,
@@ -671,7 +671,7 @@
 }
 
 /* Resource boxe Vitality CSS */
-.MA20th .resource-counter .resource-vitality-step {
+.ma20th .resource-counter .resource-vitality-step {
   height: 14px;
   width: 14px;
   border: 1px solid black;
@@ -679,7 +679,7 @@
   cursor: pointer;
 }
 
-.MA20th .resource-counter .resource-vitality-step[data-state="-"] {
+.ma20th .resource-counter .resource-vitality-step[data-state="-"] {
   background:
     linear-gradient(
       135deg,
@@ -692,7 +692,7 @@
     );
 }
 
-.MA20th .resource-counter .resource-vitality-step[data-state="/"] {
+.ma20th .resource-counter .resource-vitality-step[data-state="/"] {
   background:
     linear-gradient(
       45deg,
@@ -714,7 +714,7 @@
     );
 }
 
-.MA20th .resource-counter .resource-vitality-step[data-state="x"] {
+.ma20th .resource-counter .resource-vitality-step[data-state="x"] {
   background:
     linear-gradient(
       45deg,
@@ -745,16 +745,16 @@
     );
 }
 
-.MA20th .flex-group-center:not(.flexrow) .resource-value,
-.MA20th .flex-group-center:not(.flexrow) .resource-counter-syb,
-.MA20th .flex-group-center:not(.flexrow) .resource-counter-2cf,
-.MA20th .flex-group-center:not(.flexrow) .resource-buttons,
-.MA20th .flex-group-center:not(.flexrow) .resource-vitality,
-.MA20th .flex-group-center:not(.flexrow) .resource-counter {
+.ma20th .flex-group-center:not(.flexrow) .resource-value,
+.ma20th .flex-group-center:not(.flexrow) .resource-counter-syb,
+.ma20th .flex-group-center:not(.flexrow) .resource-counter-2cf,
+.ma20th .flex-group-center:not(.flexrow) .resource-buttons,
+.ma20th .flex-group-center:not(.flexrow) .resource-vitality,
+.ma20th .flex-group-center:not(.flexrow) .resource-counter {
   margin-top: 5px;
 }
 
-.MA20th .tab.disciplines .resource-value {
+.ma20th .tab.disciplines .resource-value {
   margin-top: 2px;
 }
 

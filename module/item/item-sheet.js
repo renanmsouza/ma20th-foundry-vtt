@@ -8,7 +8,7 @@ export class VampireItemSheet extends ItemSheet {
   /** @override */
   static get defaultOptions () {
     return mergeObject(super.defaultOptions, {
-      classes: ['MA20th', 'sheet', 'item'],
+      classes: ['ma20th', 'sheet', 'item'],
       width: 520,
       height: 480,
       tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'description' }]
