@@ -1,39 +1,53 @@
 <form class="{{cssClass}}" autocomplete="off">
-    <header class="sheet-header">
-        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" alt="Item Image" />
-        <div class="header-fields">
-            <h1 class="charname"><input name="name" type="text" value="{{item.name}}"
-                    placeholder="{{localize 'MA20th.Name'}}" /></h1>
-        </div>
-    </header>
+  <header class="sheet-header">
+    <img
+      class="profile-img"
+      src="{{item.img}}"
+      data-edit="img"
+      title="{{item.name}}"
+      alt="Item Image"
+    />
+    <div class="header-fields">
+      <h1 class="charname">
+        <input
+          name="name"
+          type="text"
+          value="{{item.name}}"
+          placeholder="{{localize 'MA20th.Name'}}"
+        />
+      </h1>
+    </div>
+  </header>
 
-    {{!-- Sheet Tab Navigation --}}
-    <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item" data-tab="description">{{localize "MA20th.Description"}}</a>
-        <a class="item" data-tab="attributes">{{localize "MA20th.Attributes"}}</a>
-    </nav>
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="description">{{localize "MA20th.Description"}}</a>
+    <a class="item" data-tab="attributes">{{localize "MA20th.Attributes"}}</a>
+  </nav>
 
-    {{!-- Sheet Body --}}
-    <section class="sheet-body">
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    {{!-- Description Tab --}}
+    <div class="tab" data-group="primary" data-tab="description">
+      {{editor content=data.data.description target="data.description"
+      button=true owner=owner editable=editable}}
+    </div>
 
-        {{!-- Description Tab --}}
-        <div class="tab" data-group="primary" data-tab="description">
-            {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
-        </div>
-
-        {{!-- Attributes Tab --}}
-        <div class="tab attributes" data-group="primary" data-tab="attributes">
-            <div class="resource grid grid-4col flex-center">
-                <label class="resource-label">{{localize "MA20th.FeatureType"}}: </label>
-                <select name="data.featuretype" data-type="String">
-                    {{#select data.featuretype}}
-                    <option value="merit">{{localize "MA20th.Merit"}}</option>
-                    <option value="flaw">{{localize "MA20th.Flaw"}}</option>
-                    {{/select}}
-                </select>
-                <label class="resource-label">{{localize "MA20th.Points"}}: </label>
-                <input type="number" name="data.points" value="{{data.points}}" />
-            </div>
-        </div>
-    </section>
+    {{!-- Attributes Tab --}}
+    <div class="tab attributes" data-group="primary" data-tab="attributes">
+      <div class="resource grid grid-4col flex-center">
+        <label class="resource-label"
+          >{{localize "MA20th.FeatureType"}}:
+        </label>
+        <select name="data.featuretype" data-type="String">
+          {{#select data.data.featuretype}}
+          <option value="merit">{{localize "MA20th.Merit"}}</option>
+          <option value="flaw">{{localize "MA20th.Flaw"}}</option>
+          {{/select}}
+        </select>
+        <label class="resource-label">{{localize "MA20th.Points"}}: </label>
+        <input type="number" name="data.points" value="{{data.data.points}}" />
+      </div>
+    </div>
+  </section>
 </form>
