@@ -133,7 +133,7 @@
        * @return {undefined}
        */
      _prepareCharacterAbilities (sheetData) {
-        const actorData = sheetData.data.abilities
+        const actorData = sheetData.data.data.abilities
 
         if (actorData.strength.value === 0) {
           actorData.strength.value = 1
