@@ -28,7 +28,7 @@
             {{editor content=data.duration target="data.duration" button=true owner=owner editable=editable}}
             </div> -->
             <!-- <label class="resource-label">{{localize "MA20th.System"}}: </label> -->
-            {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+            {{editor content=data.data.description target="data.description" button=true owner=owner editable=editable}}
         </div>
 
         {{!-- Attributes Tab --}}
@@ -37,7 +37,7 @@
             <div class="resource grid grid-4col flex-center">
                 <label class="resource-label">{{localize "MA20th.Discipline"}}: </label>
                 <select name="data.discipline" data-type="String">
-                    {{#select data.discipline}}
+                    {{#select data.data.discipline}}
                     <option value="animalism">{{localize "MA20th.Animalism"}}</option>
                     <option value="auspex">{{localize "MA20th.Auspex"}}</option>
                     <option value="celerity">{{localize "MA20th.Celerity"}}</option>
@@ -55,11 +55,11 @@
                     {{/select}}
                 </select>
                 <label class="resource-label">{{localize "MA20th.Rollable"}}: </label>
-                <input type="checkbox" id="data.rollable" name="data.rollable" {{checked data.rollable}}>
+                <input type="checkbox" id="data.rollable" name="data.rollable" {{checked data.data.rollable}}>
 
                 <label class="resource-label">{{localize "MA20th.System"}}: </label>
                 <select name="data.dice1" data-type="String">
-                    {{#select data.dice1}}
+                    {{#select data.data.dice1}}
                     <option value="strength">{{localize "MA20th.Strength"}}</option>
                     <option value="dexterity">{{localize "MA20th.Dexterity"}}</option>
                     <option value="stamina">{{localize "MA20th.Stamina"}}</option>
@@ -69,12 +69,12 @@
                     <option value="intelligence">{{localize "MA20th.Intelligence"}}</option>
                     <option value="wits">{{localize "MA20th.Wits"}}</option>
                     <option value="resolve">{{localize "MA20th.Resolve"}}</option>
-                    <option value="discipline">{{localize (getDisciplineName item.data.discipline)}}</option>
+                    <option value="discipline">{{localize (getDisciplineName item.data.data.discipline)}}</option>
                     {{/select}}
                 </select>
                 <label class="resource-label">+</label>
                 <select name="data.dice2" data-type="String">
-                    {{#select data.dice2}}
+                    {{#select data.data.dice2}}
                     <option value="strength">{{localize "MA20th.Strength"}}</option>
                     <option value="dexterity">{{localize "MA20th.Dexterity"}}</option>
                     <option value="stamina">{{localize "MA20th.Stamina"}}</option>
@@ -84,7 +84,7 @@
                     <option value="intelligence">{{localize "MA20th.Intelligence"}}</option>
                     <option value="wits">{{localize "MA20th.Wits"}}</option>
                     <option value="resolve">{{localize "MA20th.Resolve"}}</option>
-                    <option value="discipline">{{localize (getDisciplineName item.data.discipline)}}</option>
+                    <option value="discipline">{{localize (getDisciplineName item.data.data.discipline)}}</option>
                     {{/select}}
                 </select>
             </div>
