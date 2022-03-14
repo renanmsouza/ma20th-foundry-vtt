@@ -2,9 +2,9 @@
   "name": "ma20th",
   "title": "Mage: The Ascension 20th Anniversary Edition",
   "description": "Mage: The Ascension 20th Anniversary Edition System for Foundry VTT",
-  "version": "1.0.2",
-  "minimumCoreVersion": "0.7.0",
-  "compatibleCoreVersion": "0.7.9",
+  "version": "2.0.0",
+  "minimumCoreVersion": "9",
+  "compatibleCoreVersion": "9.255",
   "templateVersion": 2,
   "author": "Renan M. Souza",
   "esmodules": ["module/main.js"],
@@ -32,6 +32,6 @@
   "secondaryTokenAttribute": "",
   "url": "https://github.com/renanmsouza/ma20th-foundry-vtt",
   "manifest": "https://raw.githubusercontent.com/renanmsouza/ma20th-foundry-vtt/master/system.json",
-  "download": "https://github.com/renanmsouza/ma20th-foundry-vtt/archive/refs/tags/1.0.2.zip",
+  "download": "https://github.com/renanmsouza/ma20th-foundry-vtt/archive/refs/tags/2.0.0.zip",
   "license": "LICENSE.txt"
 }

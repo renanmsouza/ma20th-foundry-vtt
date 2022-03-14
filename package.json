@@ -1,7 +1,7 @@
 {
   "name": "ma20th",
-  "version": "1.0.0",
-  "description": "CSS compiler for the Vampire 5e system",
+  "version": "2.0.0",
+  "description": "CSS compiler for Mage: The Ascension 20th Anniversary Edition",
   "scripts": {
     "build": "gulp",
     "compile": "gulp css",
@@ -11,7 +11,7 @@
   "browserslist": [
     "last 3 versions"
   ],
-  "author": "Renan M. Souzza",
+  "author": "Renan M. Souza",
   "license": "MIT",
   "private": true,
   "dependencies": {
