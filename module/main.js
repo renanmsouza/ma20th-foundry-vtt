@@ -25,8 +25,8 @@ Hooks.once('init', async function () {
   }
 
   // Define custom Entity classes
-  CONFIG.Actor.documentClass = MageActor
-  CONFIG.Item.documentClass = MageItem
+  CONFIG.Actor.entityClass = MageActor
+  CONFIG.Item.entityClass = MageItem
   CONFIG.Dice.terms.v = VampireDie
   CONFIG.Dice.terms.h = VampireHungerDie
 
