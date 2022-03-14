@@ -133,7 +133,7 @@
        * @return {undefined}
        */
      _prepareCharacterAbilities (sheetData) {
-        const actorData = sheetData.data.abilities
+        const actorData = sheetData.data.data.abilities
 
         if (actorData.strength.value === 0) {
           actorData.strength.value = 1
@@ -806,7 +806,11 @@
     _assignToActorField (fields, value) {
       const actorData = duplicate(this.actor)
       const lastField = fields.pop()
+      // console.log(actorData);
+      // console.log(value);
+      // console.log(fields);
       fields.reduce((data, field) => data[field], actorData)[lastField] = value
+      // actorData.data[lastField] = value
       this.actor.update(actorData)
     }
   
