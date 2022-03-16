@@ -23,13 +23,13 @@
         "concept":"",
         "predator":"",
         "chronicle":"",
-        "ambition":"",
-        "sire":"",
-        "desire":"",
-        "generation":"",
-        "tenets":"",
-        "touchstones":"",
-        "bane":""
+        "otherTraits":"",
+        "wonders":"",
+        "awakening":"",
+        "description":"",
+        "focus":"",
+        "routines":"",
+        "possessions":""
       },
       "blood": {
         "potency": 0,

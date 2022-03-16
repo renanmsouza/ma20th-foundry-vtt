@@ -147,6 +147,13 @@
 }
 
 /* New Styles */
+.ma20th .editor .editor-content {
+  height: 100%;
+  background: #faf5ed;
+  font-family: "cormorantLight", sans-serif;
+  font-weight: 600;
+}
+
 .ma20th .window-content {
   background: #faf5ed;
   font-family: "cormorantLight", sans-serif;

@@ -264,14 +264,16 @@
       // Update Inventory Item
       html.find('.item-edit').click(ev => {
         const li = $(ev.currentTarget).parents('.item')
-        const item = this.actor.getOwnedItem(li.data('itemId'))
+        
+        const item = this.actor.items.get(li.data('itemId'))
         item.sheet.render(true)
       })
   
       // Delete Inventory Item
       html.find('.item-delete').click(ev => {
         const li = $(ev.currentTarget).parents('.item')
-        this.actor.deleteOwnedItem(li.data('itemId'))
+
+        this.actor.deleteEmbeddedDocuments("Item", [li.data('itemId')], {})
         li.slideUp(200, () => this.render(false))
       })
   
@@ -396,7 +398,7 @@
       delete itemData.data.type
   
       // Finally, create the item!
-      return this.actor.createOwnedItem(itemData)
+      return this.actor.createEmbeddedDocuments("Item", [itemData], {})
     }
   
     /**
@@ -475,7 +477,7 @@
     
     _defaultRoll (numDices, dificulty, modifier, rollTitle = '' ,isProf = false) {
       // Default Roll
-      let roll = new Roll(`${numDices + modifier}d10cs>=${dificulty}df=1`).roll();
+      let roll = new Roll(`${numDices + modifier}d10cs>=${dificulty}df=1`);
       let title = game.i18n.localize(rollTitle);
 	
       roll.toMessage({
@@ -487,7 +489,7 @@
       // Proficient Roll
       const profRoll = roll.terms[0].results.filter(e => e.result === 10);
       if (isProf && (profRoll.length > 0)){
-        let rollProf = new Roll(`${profRoll.length}d10cs>=${dificulty}df=1`).roll();
+        let rollProf = new Roll(`${profRoll.length}d10cs>=${dificulty}df=1`);
       
         rollProf.toMessage({
           user: game.user._id,
@@ -806,10 +808,26 @@
     _assignToActorField (fields, value) {
       const actorData = duplicate(this.actor)
       const lastField = fields.pop()
+      
       // console.log(actorData);
       // console.log(value);
       // console.log(fields);
-      fields.reduce((data, field) => data[field], actorData)[lastField] = value
+      // console.log(lastField)
+
+      if (fields[0] === 'item') {
+        var itemIndex = -1;
+        
+        actorData.items.find(function(item, i){
+          if (item._id === fields[1]) {
+            itemIndex = i
+          }
+        })
+
+        actorData.items[itemIndex].data.value = value 
+      } else {
+        fields.reduce((data, field) => data[field], actorData)[lastField] = value
+      }
+      
       // actorData.data[lastField] = value
       this.actor.update(actorData)
     }

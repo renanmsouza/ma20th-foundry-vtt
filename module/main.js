@@ -4,7 +4,7 @@
 import { MageActor } from './actor/actor.js'
 import { MageActorSheet } from './actor/mage20th-sheet.js'
 import { MageItem } from './item/item.js'
-import { VampireItemSheet } from './item/item-sheet.js'
+import { MageItemSheet } from './item/item-sheet.js'
 import { VampireDie, VampireHungerDie } from './dice/dice.js'
 
 Hooks.once('init', async function () {
@@ -34,7 +34,7 @@ Hooks.once('init', async function () {
   Actors.unregisterSheet('core', ActorSheet)
   Actors.registerSheet('ma20th', MageActorSheet, { makeDefault: true })
   Items.unregisterSheet('core', ItemSheet)
-  Items.registerSheet('ma20th', VampireItemSheet, { makeDefault: true })
+  Items.registerSheet('ma20th', MageItemSheet, { makeDefault: true })
 
   // If you need to add Handlebars helpers, here are a few useful examples:
   Handlebars.registerHelper('concat', function () {

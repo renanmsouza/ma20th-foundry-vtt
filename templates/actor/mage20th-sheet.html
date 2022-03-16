@@ -8,9 +8,9 @@
             <div class="grid grid-3col flexrow">
                 <h1 class="charname"><input name="name" type="text" value="{{actor.name}}"
                         placeholder="{{localize 'MA20th.Name'}}" /></h1>
-                <h1 class="charname"><input name="data.data.affiliation.value" type="text" value="{{data.data.affiliation.value}}"
+                <h1 class="charname"><input name="data.affiliation.value" type="text" value="{{data.data.affiliation.value}}"
                         placeholder="{{localize 'MA20th.Affiliation'}}" /></h1>
-                <h1 class="charname"><input name="data.data.sect.value" type="text" value="{{data.data.sect.value}}"
+                <h1 class="charname"><input name="data.sect.value" type="text" value="{{data.data.sect.value}}"
                         placeholder="{{localize 'MA20th.Sect'}}" /></h1>
             </div>
             {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
@@ -44,9 +44,9 @@
                 <div class="resource flex-group-center exp">
                     <label for="data.data.exp" class="resource-label">{{localize "MA20th.Exp"}}</label>
                     <div class="resource-content flexrow flex-center flex-between">
-                        <input type="number" name="data.data.exp.value" value="{{data.data.exp.value}}" data-dtype="Number" />
+                        <input type="number" name="data.exp.value" value="{{data.data.exp.value}}" data-dtype="Number" />
                         /
-                        <input type="number" name="data.data.exp.max" value="{{data.data.exp.max}}" data-dtype="Number" />
+                        <input type="number" name="data.exp.max" value="{{data.data.exp.max}}" data-dtype="Number" />
                     </div>
                 </div>
             </div>
@@ -237,9 +237,9 @@
                 </li>
                 {{#each actor.backgrounds as |item id|}}
                 <li class="item flexrow" data-item-id="{{item._id}}">
-                    <label for="data.data.item.{{id}}.value" class="resource-label vrollable" data-roll="{{item.data.data.value}}"
+                    <label for="item.{{id}}.data.value" class="resource-label skillrollable" data-roll="{{item.data.data.value}}"
                         data-label="{{item.name}}">{{item.name}}</label>
-                        <div class="resource-value" data-value="{{item.data.data.value}}" data-name="data.item.{{id}}.value">
+                        <div class="resource-value" data-value="{{item.data.value}}" data-name="item.{{_id}}.value">
                             <!-- <span class="resource-value-empty"></span> -->
                             {{#numLoop 5}}
                             <span class="resource-value-step" data-index="{{this}}"></span>
@@ -279,7 +279,7 @@
                                 alt="{{item.name}}" />
                         </div>
                         <h4 class="item-name collapsible">{{item.name}}</h4>
-                        <h4 class="item-name">{{item.data.data.points}}</h4>
+                        <h4 class="item-name">{{item.data.points}}</h4>
                         <div class="item-controls">
                             <a class="item-control item-edit" title="{{localize 'MA20th.Edit'}}"><i
                                     class="fas fa-edit"></i></a>
@@ -288,7 +288,7 @@
                         </div>
                     </div>
                     <div class="content">
-                        {{{item.data.data.description}}}
+                        {{{item.data.description}}}
                     </div>
                 </li>
                 {{/each}}
@@ -296,7 +296,7 @@
             </ol>
         </div>
 
-        {{!-- Blood Tab --}}
+        <!-- {{!-- Blood Tab --}}
         <div class="tab blood" data-group="primary" data-tab="blood">
             <div class="resource flexrow grid grid-2col">
                 <div class="flex-group-center">
@@ -339,59 +339,59 @@
                     <p>{{lookup (lookup blood_potency data.data.blood.potency) "bane"}}</p>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         {{!-- Biography Tab --}}
         <div class="tab" data-group="primary" data-tab="description">
             <div class="resource flexrow grid grid-3col">
                 <div class="flex-group-center">
                     <label class="resource-label">{{localize "MA20th.Concept"}}</label>
-                    <input type="text" name="data.data.headers.concept" value="{{data.data.headers.concept}}" />
+                    <input type="text" name="data.headers.concept" value="{{data.data.headers.concept}}" />
                 </div>
                 <div class="flex-group-center">
                     <label class="resource-label">{{localize "MA20th.Chronicle"}}</label>
-                    <input type="text" name="data.data.headers.chronicle" value="{{data.data.headers.chronicle}}" />
+                    <input type="text" name="data.headers.chronicle" value="{{data.data.headers.chronicle}}" />
                 </div>
                 <div class="flex-group-center">
                     <label class="resource-label">{{localize "MA20th.OtherTraits"}}</label>
-                    <input type="text" name="data.data.headers.ambition" value="{{data.data.headers.ambition}}" />
+                    <input type="text" name="data.headers.otherTraits" value="{{data.data.headers.otherTraits}}" />
                 </div>
                 <div class="flex-group-center">
                     <label class="resource-label">{{localize "MA20th.Wonders"}}</label>
-                    <input type="text" name="data.data.headers.sire" value="{{data.data.headers.sire}}" />
+                    <input type="text" name="data.headers.wonders" value="{{data.data.headers.wonders}}" />
                 </div>
                 <div class="flex-group-center">
                     <label class="resource-label">{{localize "MA20th.Awakening"}}</label>
-                    <input type="text" name="data.data.headers.desire" value="{{data.data.headers.desire}}" />
+                    <input type="text" name="data.headers.awakening" value="{{data.data.headers.awakening}}" />
                 </div>
                 <div class="flex-group-center">
                     <label class="resource-label">{{localize "MA20th.Description"}}</label>
-                    <input type="text" name="data.data.headers.generation" value="{{data.data.headers.generation}}" />
+                    <input type="text" name="data.headers.description" value="{{data.data.headers.description}}" />
                 </div>
                 <div class="flex-group-center">
                     <label class="resource-label">{{localize "MA20th.Focus"}}</label>
-                    <textarea name="data.data.headers.tenets" rows="10">{{data.data.headers.tenets}}
+                    <textarea name="data.headers.focus" rows="10">{{data.data.headers.focus}}
 </textarea>
                 </div>
                 <div class="flex-group-center">
                     <label class="resource-label">{{localize "MA20th.Routines"}}</label>
-                    <textarea name="data.data.headers.touchstones" rows="10">{{data.data.headers.touchstones}}
+                    <textarea name="data.headers.routines" rows="10">{{data.data.headers.routines}}
 </textarea>
                 </div>
                 <div class="flex-group-center">
                     <label class="resource-label">{{localize "MA20th.Possessions"}}</label>
-                    <textarea name="data.data.headers.bane" rows="10">{{data.data.headers.bane}}
+                    <textarea name="data.headers.possessions" rows="10">{{data.data.headers.possessions}}
 </textarea>
                 </div>
             </div>
             <label class="resource-label flex-center">{{localize "MA20th.Biography"}}</label>
-            {{editor content=data.data.biography target="data.data.biography" button=true owner=owner editable=editable}}
+            {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
         </div>
 
         {{!-- Equipment Tab --}}
         <div class="tab" data-group="primary" data-tab="equipment">
             <label class="resource-label flex-center">{{localize "MA20th.Equipment"}}</label>
-            {{editor content=data.data.equipment target="data.data.equipment" button=true owner=owner editable=editable}}
+            {{editor content=data.equipment target="data.equipment" button=true owner=owner editable=editable}}
         </div>
     </section>
 </form>
