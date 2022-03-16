@@ -1,6 +1,6 @@
 # Mage: The Ascension 20th Anniversary Edition System for Foundry VTT
 
-[![Foundry Shield 0.7.9]][Foundry URL]
+[![Foundry Shield 9.255]][Foundry URL]
 [![MIT License]][MIT URL]
 
 This system is for playing Mage Ascension features of 20th Anniversary System for Foundry VTT.
