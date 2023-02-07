@@ -1,37 +1,48 @@
 {
-  "name": "ma20th",
   "title": "Mage: The Ascension 20th Anniversary Edition",
   "description": "Mage: The Ascension 20th Anniversary Edition System for Foundry VTT",
   "version": "2.0.0",
-  "minimumCoreVersion": "9",
-  "compatibleCoreVersion": "9.255",
-  "templateVersion": 2,
-  "author": "Renan M. Souza",
-  "esmodules": ["module/main.js"],
-  "styles": [
-    "css/ma20th.css", 
-    "css/magika/content-buttons.css"
+  "esmodules": [
+    "module/main.js"
   ],
-  "scripts": [],
-  "packs": [],
+  "styles": [
+    "css/ma20th.css"
+  ],
   "languages": [
     {
       "lang": "en",
       "name": "English",
-      "path": "lang/en.json"
+      "path": "lang/en.json",
+      "flags": {}
     },
     {
       "lang": "pt-BR",
       "name": "Brazilian Portuguese",
-      "path": "lang/pt-BR.json"
+      "path": "lang/pt-BR.json",
+      "flags": {}
+    },
+    {
+      "lang": "es",
+      "name": "Spanish",
+      "path": "lang/es.json",
+      "flags": {}
     }
   ],
   "gridDistance": 5,
   "gridUnits": "m",
-  "primaryTokenAttribute": "",
-  "secondaryTokenAttribute": "",
   "url": "https://github.com/renanmsouza/ma20th-foundry-vtt",
   "manifest": "https://raw.githubusercontent.com/renanmsouza/ma20th-foundry-vtt/master/system.json",
   "download": "https://github.com/renanmsouza/ma20th-foundry-vtt/archive/refs/tags/2.0.0.zip",
-  "license": "LICENSE.txt"
+  "license": "LICENSE.txt",
+  "id": "ma20th",
+  "authors": [
+    {
+      "name": "Renan M. Souza",
+      "flags": {}
+    }
+  ],
+  "compatibility": {
+    "minimum": "9",
+    "verified": "9.255"
+  }
 }
